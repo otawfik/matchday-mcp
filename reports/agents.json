@@ -1,0 +1,536 @@
+{
+  "runs": 49,
+  "fixtures": 445,
+  "coverage": 1.0,
+  "grounding": 1.0,
+  "numbers_checked": 7387,
+  "mutation": {
+    "planted": 887,
+    "caught": 0.9729,
+    "figure": {
+      "planted": 445,
+      "caught": 0.9461
+    },
+    "team": {
+      "planted": 442,
+      "caught": 1.0
+    }
+  },
+  "tool_calls_per_fixture": 5.33,
+  "tool_errors": 0,
+  "revisions": 0,
+  "sentences_cut": 0,
+  "no_history": [
+    "Elversberg",
+    "Paderborn",
+    "Schalke 04"
+  ],
+  "run_seconds_p50": 0.05,
+  "confident_calls": {
+    "n": 76,
+    "mean_confidence": 0.67,
+    "won": 0.803
+  },
+  "model_vs_market_splits": {
+    "n": 159,
+    "model_log_loss": 0.9968,
+    "market_log_loss": 0.918,
+    "model_closer": 0.296
+  },
+  "per_run": [
+    {
+      "league": "E0",
+      "start": "2026-08-29",
+      "fixtures": 9,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 48,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "E0",
+      "start": "2026-09-04",
+      "fixtures": 10,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 53,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "E0",
+      "start": "2026-09-12",
+      "fixtures": 10,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 53,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "E0",
+      "start": "2026-09-18",
+      "fixtures": 10,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 53,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "E0",
+      "start": "2026-10-10",
+      "fixtures": 10,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 53,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "E0",
+      "start": "2026-10-17",
+      "fixtures": 10,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 53,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "E0",
+      "start": "2026-10-23",
+      "fixtures": 10,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 53,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "E0",
+      "start": "2026-10-31",
+      "fixtures": 10,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 53,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "E0",
+      "start": "2026-11-06",
+      "fixtures": 10,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 53,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "SP1",
+      "start": "2026-08-29",
+      "fixtures": 8,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 43,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "SP1",
+      "start": "2026-09-03",
+      "fixtures": 9,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 48,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "SP1",
+      "start": "2026-09-07",
+      "fixtures": 2,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 13,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "SP1",
+      "start": "2026-09-11",
+      "fixtures": 10,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 53,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "SP1",
+      "start": "2026-09-15",
+      "fixtures": 9,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 48,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "SP1",
+      "start": "2026-09-19",
+      "fixtures": 9,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 48,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "SP1",
+      "start": "2026-10-09",
+      "fixtures": 9,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 48,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "SP1",
+      "start": "2026-10-16",
+      "fixtures": 10,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 53,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "SP1",
+      "start": "2026-10-21",
+      "fixtures": 6,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 33,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "SP1",
+      "start": "2026-10-25",
+      "fixtures": 5,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 28,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "SP1",
+      "start": "2026-10-30",
+      "fixtures": 10,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 53,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "SP1",
+      "start": "2026-11-06",
+      "fixtures": 10,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 53,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "D1",
+      "start": "2026-08-29",
+      "fixtures": 8,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 43,
+      "tool_errors": 0,
+      "no_history": [
+        "Elversberg",
+        "Paderborn",
+        "Schalke 04"
+      ]
+    },
+    {
+      "league": "D1",
+      "start": "2026-09-04",
+      "fixtures": 9,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 48,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "D1",
+      "start": "2026-09-11",
+      "fixtures": 9,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 48,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "D1",
+      "start": "2026-09-18",
+      "fixtures": 9,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 48,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "D1",
+      "start": "2026-10-09",
+      "fixtures": 9,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 48,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "D1",
+      "start": "2026-10-16",
+      "fixtures": 9,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 48,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "D1",
+      "start": "2026-10-23",
+      "fixtures": 9,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 48,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "D1",
+      "start": "2026-10-30",
+      "fixtures": 9,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 48,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "D1",
+      "start": "2026-11-06",
+      "fixtures": 9,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 48,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "I1",
+      "start": "2026-08-29",
+      "fixtures": 9,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 48,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "I1",
+      "start": "2026-09-04",
+      "fixtures": 10,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 53,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "I1",
+      "start": "2026-09-11",
+      "fixtures": 10,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 53,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "I1",
+      "start": "2026-09-18",
+      "fixtures": 10,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 53,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "I1",
+      "start": "2026-10-10",
+      "fixtures": 10,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 53,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "I1",
+      "start": "2026-10-16",
+      "fixtures": 10,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 53,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "I1",
+      "start": "2026-10-23",
+      "fixtures": 10,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 53,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "I1",
+      "start": "2026-10-27",
+      "fixtures": 10,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 53,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "I1",
+      "start": "2026-10-31",
+      "fixtures": 10,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 53,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "I1",
+      "start": "2026-11-06",
+      "fixtures": 10,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 53,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "F1",
+      "start": "2026-08-29",
+      "fixtures": 8,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 43,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "F1",
+      "start": "2026-09-03",
+      "fixtures": 9,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 48,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "F1",
+      "start": "2026-09-11",
+      "fixtures": 9,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 48,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "F1",
+      "start": "2026-09-18",
+      "fixtures": 9,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 48,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "F1",
+      "start": "2026-10-09",
+      "fixtures": 9,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 48,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "F1",
+      "start": "2026-10-16",
+      "fixtures": 9,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 48,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "F1",
+      "start": "2026-10-23",
+      "fixtures": 9,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 48,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "F1",
+      "start": "2026-10-30",
+      "fixtures": 9,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 48,
+      "tool_errors": 0,
+      "no_history": []
+    },
+    {
+      "league": "F1",
+      "start": "2026-11-06",
+      "fixtures": 9,
+      "revisions": 0,
+      "cut": 0,
+      "tool_calls": 48,
+      "tool_errors": 0,
+      "no_history": []
+    }
+  ]
+}
