@@ -1,0 +1,57 @@
+{
+  "goals": {
+    "model": {
+      "n": 2007,
+      "log_loss": 1.0073,
+      "brier": 0.6019,
+      "called": 0.5072
+    },
+    "market": {
+      "n": 2007,
+      "log_loss": 0.9751,
+      "brier": 0.5802,
+      "called": 0.5386
+    },
+    "league_rates": {
+      "n": 2007,
+      "log_loss": 1.0784,
+      "brier": 0.6525,
+      "called": 0.438
+    },
+    "uniform": {
+      "n": 2007,
+      "log_loss": 1.0986,
+      "brier": 0.6667,
+      "called": 0.439
+    },
+    "always_home": {
+      "called": 0.439
+    }
+  },
+  "xg_this_season": {
+    "goals": {
+      "n": 486,
+      "log_loss": 0.9771,
+      "brier": 0.5805,
+      "called": 0.5288
+    },
+    "xg": {
+      "n": 486,
+      "log_loss": 0.9811,
+      "brier": 0.5826,
+      "called": 0.5309
+    },
+    "blend": {
+      "n": 486,
+      "log_loss": 0.976,
+      "brier": 0.5793,
+      "called": 0.5391
+    },
+    "market": {
+      "n": 486,
+      "log_loss": 0.944,
+      "brier": 0.5576,
+      "called": 0.5658
+    }
+  }
+}

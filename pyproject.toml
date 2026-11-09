@@ -1,0 +1,16 @@
+[project]
+name = "matchday-mcp"
+version = "0.1.0"
+description = "MCP server: top-five European league results, tables, odds and a backtested Poisson model as agent tools"
+requires-python = ">=3.12"
+dependencies = ["mcp==2.3.0", "numpy>=2.0", "pydantic>=2.8"]
+
+[project.scripts]
+matchday-mcp = "matchday.server:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["matchday"]
