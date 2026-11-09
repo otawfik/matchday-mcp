@@ -151,11 +151,15 @@ class Form(BaseModel):
 
 
 @mcp.tool()
-def team_form(league: str, team: str, last: int = 5) -> Form:
-    """A team's last N results (default 5), oldest first, with xG where the data has it."""
-    lg = _league(league)
+def team_form(league: str, team: str, last: int = 5, asof: str | None = None) -> Form:
+    """A team's last N results (default 5) before `asof` (default: all loaded), oldest first, with xG
+    where the data has it."""
+    lg, d = _league(league), _date(asof)
     t = _team(lg, team)
-    ms = [m for m in data.results() if m.league == lg and t in (m.home, m.away)][-max(1, min(last, 38)):]
+    ms = [m for m in data.results() if m.league == lg and t in (m.home, m.away) and (not d or m.date < d)]
+    ms = ms[-max(1, min(last, 38)):]
+    if not ms:
+        raise ToolError(f"{t} has no results before {d}")
     letters, gf, ga = [], 0, 0
     for m in ms:
         f, a = (m.hg, m.ag) if m.home == t else (m.ag, m.hg)
@@ -173,11 +177,11 @@ class H2H(BaseModel):
 
 
 @mcp.tool()
-def head_to_head(league: str, team_a: str, team_b: str) -> H2H:
-    """Every meeting between two teams in the loaded seasons, and the W/D/W record."""
-    lg = _league(league)
+def head_to_head(league: str, team_a: str, team_b: str, asof: str | None = None) -> H2H:
+    """Every meeting between two teams in the loaded seasons (before `asof`, if given), and the record."""
+    lg, d = _league(league), _date(asof)
     a, b = _team(lg, team_a), _team(lg, team_b)
-    ms = [m for m in data.results() if m.league == lg and {m.home, m.away} == {a, b}]
+    ms = [m for m in data.results() if m.league == lg and {m.home, m.away} == {a, b} and (not d or m.date < d)]
     rec = {a: 0, "draw": 0, b: 0}
     for m in ms:
         w = {"H": m.home, "A": m.away}.get(m.result, "draw")
@@ -239,22 +243,23 @@ class Odds(BaseModel):
     odds: list[float] = Field(description="market average decimal odds, home/draw/away")
     implied: list[float] = Field(description="probabilities with the bookmaker margin removed")
     margin: float
-    score: str | None = None
 
 
 @mcp.tool()
-def market_odds(league: str, home: str, away: str) -> Odds:
-    """Bookmaker average odds for the next fixture between these teams (or their latest meeting at this
-    ground), converted to probabilities with the margin removed."""
-    lg = _league(league)
+def market_odds(league: str, home: str, away: str, on: str | None = None) -> Odds:
+    """Bookmaker average odds for this fixture, converted to probabilities with the margin removed.
+    `on` (YYYY-MM-DD) picks the match on that date; otherwise the next fixture, else the latest meeting
+    at this ground. Odds are pre-match prices, so asking for a played match's odds doesn't leak its result."""
+    lg, d = _league(league), _date(on)
     h, a = _team(lg, home), _team(lg, away)
-    ms = [m for m in (*data.fixtures(), *reversed(data.results())) if m.league == lg and (m.home, m.away) == (h, a) and m.odds]
+    ms = [m for m in (*data.fixtures(), *reversed(data.results()))
+          if m.league == lg and (m.home, m.away) == (h, a) and m.odds and (not d or m.date == d)]
     if not ms:
-        raise ToolError(f"no odds for {h} v {a} in the loaded data")
+        raise ToolError(f"no odds for {h} v {a}{f' on {d}' if d else ''} in the loaded data")
     m = ms[0]
     p = market(m.odds)
     return Odds(date=m.date.isoformat(), home=h, away=a, odds=list(m.odds), implied=[round(x, 3) for x in p],
-                margin=round(sum(1 / o for o in m.odds) - 1, 4), score=m.to_dict().get("score"))
+                margin=round(sum(1 / o for o in m.odds) - 1, 4))
 
 
 class Fixture(BaseModel):
@@ -271,11 +276,14 @@ class Fixtures(BaseModel):
 
 
 @mcp.tool()
-def upcoming_fixtures(league: str) -> Fixtures:
-    """Scheduled fixtures with market odds, from the latest fixtures file."""
-    lg = _league(league)
+def upcoming_fixtures(league: str, start: str | None = None, days: int = 4) -> Fixtures:
+    """Scheduled fixtures with market odds, from the latest fixtures file. With `start` (YYYY-MM-DD) it
+    lists the fixtures of the `days` days from then instead, played or not, without their results,
+    so a past matchday can be replayed as if it were upcoming."""
+    lg, d = _league(league), _date(start)
+    src = data.fixtures() if d is None else [m for m in data.results() if d <= m.date < d + timedelta(days=days)]
     fx = [Fixture(date=m.date.isoformat(), home=m.home, away=m.away, odds=list(m.odds) if m.odds else None)
-          for m in data.fixtures() if m.league == lg]
+          for m in src if m.league == lg]
     note = None if fx else "no unplayed fixtures in the snapshot; `python -m matchday.refresh` fetches the latest"
     return Fixtures(league=LEAGUES[lg], fixtures=fx, note=note)
 
